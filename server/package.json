@@ -1,0 +1,45 @@
+{
+  "name": "ninpo-snacks-backend",
+  "version": "1.0.0",
+  "description": "Secure Logistics Hub for Ninpo Snacks",
+  "main": "index.js",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "create-owner": "node scripts/create-owner.js",
+    "cleanup-abandoned-orders": "node scripts/cleanupAbandonedOrders.js",
+    "cleanup-receipt-queue": "node scripts/cleanupReceiptQueue.js",
+    "backfill-store-normalization": "node scripts/backfillStoreNormalization.js",
+    "find-abandoned-authorizations": "node scripts/findAbandonedAuthorizations.js",
+    "rebuild-store-inventory-indexes": "node scripts/rebuildStoreInventoryIndexes.js",
+    "test": "node --test",
+    "worker:receipts": "node workers/receiptWorker.js"
+  },
+  "dependencies": {
+    "@google/genai": "^1.35.0",
+    "@sentry/node": "^8.55.0",
+    "@sentry/profiling-node": "^10.35.0",
+    "bcryptjs": "^3.0.3",
+    "bullmq": "^5.15.0",
+    "cloudinary": "^2.9.0",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.5.1",
+    "express-session": "^1.18.2",
+    "fast-levenshtein": "file:../vendor/fast-levenshtein",
+    "helmet": "^8.1.0",
+    "ioredis": "^5.4.1",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^7.8.8",
+    "socket.io": "^4.8.3",
+    "stripe": "^12.0.0"
+  },
+  "devDependencies": {
+    "supertest": "^7.2.2"
+  }
+}
